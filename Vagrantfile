@@ -16,6 +16,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "ubuntu/trusty64"
 
+  config.ssh.insert_key = false
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -25,9 +27,24 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
-  config.vm.network "forwarded_port", guest: 22, host: 2233, id: "ssh"
-  config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.network "forwarded_port", guest: 443, host: 8443
+  config.vm.define "vagrant1" do |vagrant1|
+    vagrant1.vm.box = "ubuntu/trusty64"
+    vagrant1.vm.network "forwarded_port", guest: 80, host: 8080
+    vagrant1.vm.network "forwarded_port", guest: 443, host: 8443
+    config.vm.network "forwarded_port", guest: 22, host: 2200, id: "ssh"
+  end
+  config.vm.define "vagrant2" do |vagrant2|
+      vagrant2.vm.box = "ubuntu/trusty64"
+      vagrant2.vm.network "forwarded_port", guest: 80, host: 8081
+      vagrant2.vm.network "forwarded_port", guest: 443, host: 8444
+      config.vm.network "forwarded_port", guest: 22, host: 2201, id: "ssh"
+  end
+  config.vm.define "vagrant3" do |vagrant3|
+      vagrant3.vm.box = "ubuntu/trusty64"
+      vagrant3.vm.network "forwarded_port", guest: 80, host: 8082
+      vagrant3.vm.network "forwarded_port", guest: 443, host: 8445
+      config.vm.network "forwarded_port", guest: 22, host: 2202, id: "ssh"
+  end
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
