@@ -6,6 +6,6 @@
    shell: "{{ KAFKA_STOP_COMMAND }}"
    ignore_errors: yes
    when: kafka_service_status.rc == 0
-   notify:
-     - kafka_service_status report
+  #  notify:
+  #    - kafka_service_status report
 

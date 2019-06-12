@@ -6,6 +6,9 @@
   vars:
     zookeeper_tag_name: "tag_{{ zookeeper_tag | replace('-', '_') }}"
   tasks:
+    - debug:
+        msg: var=item
+      with_dict: "{{groups}}"
     - add_host: name={{ item }} groups=zookeeper
       with_items: "{{ groups[zookeeper_tag_name] }}"
 

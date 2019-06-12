@@ -1,11 +1,12 @@
 ---
-key_pair: ronak-nathani
+key_pair: Kafka-cluster
 instance_type: t2.medium
 region: us-west-2
-security_group_id: sg-19127861
+# We have to manually provide a security group which enables ssh
+security_group_id: sg-007d769d64c9a68af
 num_instances: 2
-subnet_id: subnet-3a78835f
+subnet_id: subnet-5879ed10
 tag_key_vals:
-  Name: ronak-ec2-role
+  Name: mw-ec2-role
   class: kafka
   class2: zookeeper

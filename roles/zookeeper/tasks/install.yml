@@ -1,3 +1,13 @@
+# - name: Update apt-get
+#   shell: apt-get update
+#   become: true
+#   become_method: sudo
+
+# - name: Install java
+#   shell: apt-get install openjdk-11-jre-headless
+#   become: true
+#   become_method: sudo
+
 - name: Download Zookeeper Tar
   get_url:
     url: "{{ ZOOKEEPER_URL }}"

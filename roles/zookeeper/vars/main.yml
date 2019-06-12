@@ -1,4 +1,4 @@
-ZOOKEEPER_VERSION: 3.4.9
+ZOOKEEPER_VERSION: 3.4.14
 ZOOKEEPER_URL: http://www.us.apache.org/dist/zookeeper/zookeeper-{{ ZOOKEEPER_VERSION }}/zookeeper-{{ ZOOKEEPER_VERSION }}.tar.gz
 ZOOKEEPER_TAR: zookeeper-{{ ZOOKEEPER_VERSION }}.tar.gz
 INSTALLATION_DIR: /usr/local

@@ -1,9 +1,15 @@
 ---
+# - name: debug
+#   debug:
+#     msg: var=item
+#   with_dict: "{{hostvars}}"
+
 - name: Dissociate and release EIPs associated with instances
   ec2_eip:
     state: absent
     region: "{{ region }}"
     device_id: "{{ hostvars[item].ec2_id }}"
+    private_ip_address: "{{ hostvars[item].ec2_private_ip_address }}"
     release_on_disassociation: True
   with_items: "{{ groups[cluster_name] }}"
 

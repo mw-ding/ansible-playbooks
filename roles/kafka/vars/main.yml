@@ -1,4 +1,4 @@
-KAFKA_VERSION: 0.10.1.1
+KAFKA_VERSION: 2.2.1
 KAFKA_SCALA_VERSION: "2.11"
 KAFKA_URL: "http://www.us.apache.org/dist/kafka/{{ KAFKA_VERSION }}/kafka_{{ KAFKA_SCALA_VERSION }}-{{ KAFKA_VERSION }}.tgz"
 KAFKA_TAR: kafka_{{ KAFKA_SCALA_VERSION }}-{{ KAFKA_VERSION }}.tgz

@@ -1,3 +1,3 @@
 ---
-ami_id: ami-62e01e02
+ami_id: ami-005bdb005fb00e791
 cluster_name: "tag_Name_{{ tag_key_vals.Name | replace('-', '_') }}"

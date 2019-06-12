@@ -9,7 +9,7 @@
       ec2:
         key_name: ronak-nathani
         instance_type: t2.large
-        image: ami-62e01e02
+        image: ami-005bdb005fb00e791
         region: us-west-2
         wait: yes
         group: ronak-ansible

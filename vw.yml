@@ -12,7 +12,8 @@
 - name: Execute Vowpal Wabbit roles
   hosts: vw
   user: ubuntu
-  become: true
-  become_method: sudo
+  # become: true
+  # become_method: sudo
+  become_user: ubuntu
   roles:
     - role: vw
