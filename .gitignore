@@ -3,6 +3,8 @@ logs
 keys
 *.pem
 
+hosts
+
 # Local .terraform directories
 **/.terraform/*
 

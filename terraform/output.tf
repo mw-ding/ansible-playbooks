@@ -1,3 +1,7 @@
-output "ip" {
-  value = "${aws_spot_instance_request.my-instance.*.public_ip}"
+output "spark-instance-ips" {
+  value = "${aws_spot_instance_request.spark-cluster.*.public_ip}"
+}
+
+output "kafka-instance-ips" {
+  value = "${aws_spot_instance_request.kafka-cluster.*.public_ip}"
 }
