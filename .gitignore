@@ -1,6 +1,6 @@
 *.retry
-logs
-keys
+**/logs**
+**/keys/*
 *.pem
 
 hosts
