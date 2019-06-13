@@ -3,7 +3,7 @@ variable "ami" {
 }
 
 variable "instance_type" {
-  default = "t2.nano"
+  default = "t2.large"
 }
 
 variable "region" {
@@ -17,4 +17,3 @@ variable "instance_count" {
 variable "spot_instance_price" {
   default = "0.03"
 }
-
