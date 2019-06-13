@@ -1,0 +1,21 @@
+---
+# - name: Creating host group zookeeper from dynamic inventory
+#   hosts: localhost
+#   connection: local
+#   tags: ['info', 'install', 'start', 'stop', 'uninstall']
+#   vars:
+#     zookeeper_tag_name: "tag_{{ zookeeper_tag | replace('-', '_') }}"
+#   tasks:
+#     - debug:
+#         msg: var=item
+#       with_dict: "{{groups}}"
+#     - add_host: name={{ item }} groups=zookeeper
+#       with_items: "{{ groups[zookeeper_tag_name] }}"
+
+- name: Execute Zookeeper roles
+  hosts: kafka-cluster
+  user: ubuntu
+  become: true
+  become_method: sudo
+  roles:
+    - role: zookeeper
