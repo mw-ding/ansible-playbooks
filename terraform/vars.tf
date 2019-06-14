@@ -10,8 +10,12 @@ variable "region" {
   default = "us-west-2"
 }
 
-variable "instance_count" {
-  default = "2"
+variable "kafka_cluster_instance_count" {
+  default = "3"
+}
+
+variable "spark_cluster_instance_count" {
+  default = "0"
 }
 
 variable "spot_instance_price" {

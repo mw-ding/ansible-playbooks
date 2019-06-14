@@ -1,3 +1,3 @@
 ---
-dependencies:
-  - { role: zookeeper, tags: ['zookeeper'] }
+# dependencies:
+#   - { role: zookeeper, tags: ['zookeeper'] }
