@@ -36,3 +36,17 @@ OpenJDK 64-Bit Server VM (build 11.0.3+7-Ubuntu-1ubuntu218.04.1, mixed mode, sha
 ## Destory the cluster
 
 `terraform destroy`
+
+## Install Zookeeper and Kafka
+
+For Zookeeper:
+* *Install Zookeeper*: `ansible-playbook ./zookeeper.yml --tags install`
+* *Start Zookeeper*: `ansible-playbook ./zookeeper.yml --tags start`
+* *Stop Zookeeper*: `ansible-playbook ./zookeeper.yml --tags stop`
+* *Check Zookeeper status*: `ansible-playbook ./zookeeper.yml --tags info`
+
+For Kafka:
+* *Install Kafka*: `ansible-playbook ./kafka.yml --tags install`
+* *Start Kafka*: `ansible-playbook ./kafka.yml --tags start`
+* *Stop Kafka*: `ansible-playbook ./kafka.yml --tags stop`
+* *Check Kafka status*: `ansible-playbook ./kafka.yml --tags info`

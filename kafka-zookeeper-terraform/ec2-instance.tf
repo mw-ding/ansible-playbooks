@@ -8,7 +8,7 @@ resource "aws_spot_instance_request" "spark-cluster" {
   ami                  = "${var.ami}"
   instance_type        = "${var.instance_type}"
   key_name             = "${aws_key_pair.terraform-demo.key_name}"
-  # user_data            = "${file("install-jre-ubuntu.sh")}"
+  user_data            = "${file("install-jre-ubuntu.sh")}"
   wait_for_fulfillment = true
   count                = "${var.spark_cluster_instance_count}"
 
@@ -22,7 +22,7 @@ resource "aws_spot_instance_request" "kafka-cluster" {
   ami                  = "${var.ami}"
   instance_type        = "${var.instance_type}"
   key_name             = "${aws_key_pair.terraform-demo.key_name}"
-  # user_data            = "${file("install-jre-ubuntu.sh")}"
+  user_data            = "${file("install-jre-ubuntu.sh")}"
   wait_for_fulfillment = true
   count                = "${var.kafka_cluster_instance_count}"
 
